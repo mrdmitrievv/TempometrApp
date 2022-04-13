@@ -36,6 +36,19 @@ struct CurrentWeather {
         }
     }
     
+    var mainViewString: String {
+        switch systemIconNameString {
+            case "cloud.bolt.rain.fill": return "rain"
+            case "cloud.drizzle.fill": return "rain"
+            case "cloud.rain.fill": return "rain"
+            case "cloud.snow.fill": return "snowy"
+            case "smoke.fill": return "cloudly"
+            case "sun.min.fill": return "sunny"
+            case "cloud.sun.fill": return "cloudsun"
+            default: return "xmark.icloud.fill"
+        }
+    }
+    
     init?(currentWeatherData: CurrentWeatherData) {
         cityName = currentWeatherData.name
         temperature = currentWeatherData.main.temp

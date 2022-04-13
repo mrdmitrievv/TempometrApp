@@ -11,7 +11,7 @@ import CoreLocation
 class NetworkManager {
     enum RequestType {
         case cityName(city: String)
-        case coordinate(latitude: CLLocationDegrees, longtitude: CLLocationDegrees)
+        case coordinate(latitude: CLLocationDegrees, longitude: CLLocationDegrees)
     }
     
     var onCompletion: ((CurrentWeather) -> Void)?
@@ -22,8 +22,8 @@ class NetworkManager {
         switch requestType {
         case .cityName(let city):
             urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric"
-        case .coordinate(let latitude, let longtitude):
-            urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longtitude)&apikey=\(apiKey)&units=metric"
+        case .coordinate(let latitude, let longitude):
+            urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&apikey=\(apiKey)&units=metric"
         }
         
         performRequest(withUrlString: urlString)
