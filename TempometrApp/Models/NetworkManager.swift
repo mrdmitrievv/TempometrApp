@@ -42,7 +42,7 @@ class NetworkManager {
         task.resume()
     }
     
-    // Test commit
+    // Test commit dsd
   
     fileprivate func parseJSON(withData data: Data) -> CurrentWeather? {
         let decoder = JSONDecoder()
