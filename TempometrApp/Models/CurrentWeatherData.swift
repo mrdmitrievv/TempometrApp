@@ -1,10 +1,3 @@
-//
-//  CurrentWeatherData.swift
-//  TempometrApp
-//
-//  Created by Артём Дмитриев on 12.04.2022.
-//
-
 import Foundation
 
 struct CurrentWeatherData: Codable {

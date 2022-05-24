@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  TempometrApp
-//
-//  Created by Артём Дмитриев on 07.04.2022.
-//
-
 import UIKit
 
 class LaunchViewController: UIViewController {

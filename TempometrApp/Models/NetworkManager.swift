@@ -1,10 +1,3 @@
-//
-//  NetworkManager.swift
-//  TempometrApp
-//
-//  Created by Артём Дмитриев on 12.04.2022.
-//
-
 import Foundation
 import CoreLocation
 
@@ -41,8 +34,6 @@ class NetworkManager {
         }
         task.resume()
     }
-    
-    // Test commit dsddsd
   
     fileprivate func parseJSON(withData data: Data) -> CurrentWeather? {
         let decoder = JSONDecoder()
