@@ -22,7 +22,7 @@ class WeatherViewController: UIViewController {
     let searchButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "search"), for: .normal)
-        button.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
+        button.addTarget(WeatherViewController.self, action: #selector(didTapSearchButton), for: .touchUpInside)
         return button
     }()
     
