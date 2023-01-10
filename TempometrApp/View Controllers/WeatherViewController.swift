@@ -22,7 +22,7 @@ class WeatherViewController: UIViewController {
     let searchButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "search"), for: .normal)
-        button.addTarget(WeatherViewController.self, action: #selector(didTapSearchButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
         return button
     }()
     
@@ -77,8 +77,10 @@ class WeatherViewController: UIViewController {
             self.updateInterface(weather: currentWeather)            
         }
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager.requestLocation()
+            }
         }
     }
     
@@ -119,7 +121,7 @@ class WeatherViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             weatherIconImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            weatherIconImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            weatherIconImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             weatherIconImageView.widthAnchor.constraint(equalToConstant: 200),
             weatherIconImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
