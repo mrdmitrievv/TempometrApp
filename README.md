@@ -1,3 +1,3 @@
 # TempometrApp
 
-This app allows users to check current weather in selected city
+A simple app which allows users to check current weather in selected city
